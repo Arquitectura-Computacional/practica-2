@@ -45,7 +45,7 @@ always @ (A_i or B_i or ALU_Operation_i)
 	begin
 		case (ALU_Operation_i)
 		
-			// ADD, ADDI, SW, LW, JAL, JALR
+			// ADD, ADDI, SW, LW, JALR
 			ADD:		ALU_Result_o = A_i + B_i;
 			SUB:		ALU_Result_o = A_i - B_i;
 			AND:		ALU_Result_o = A_i & B_i;
