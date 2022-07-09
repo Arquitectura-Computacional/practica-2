@@ -81,7 +81,8 @@ Register_sp
 	.reset(reset),
 	.enable(select_register_w[2]&Reg_Write_i),
 	.DataInput(Write_Data_i),
-	.DataOutput(Intercnection_wire[3*N-1:2*N])
+	.DataOutput(Intercnection_wire[3*N-1:2*N]),
+	.sp(1)
 );	
 
 

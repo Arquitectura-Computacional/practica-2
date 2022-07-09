@@ -5,7 +5,7 @@
 * Version:
 *	1.0
 * Author:
-*	Dr. José Luis Pizano Escalante
+*	Dr. JosÃ© Luis Pizano Escalante
 * email:
 *	luispizano@iteso.mx
 * Date:
@@ -27,7 +27,7 @@ module PC_Register
 
 always@(negedge reset or posedge clk) begin
 	if(reset==0)
-		PC_Value <= 0;
+		PC_Value <= 32'h0040_0000; //32'h0040_0000;
 	else	
 		PC_Value<= Next_PC;
 end

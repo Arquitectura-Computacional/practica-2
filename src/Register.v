@@ -3,7 +3,7 @@
 *	This the basic register that is used in the register file
 *	1.0
 * Author:
-*	Dr. José Luis Pizano Escalante
+*	Dr. JosÃ© Luis Pizano Escalante
 * email:
 *	luispizano@iteso.mx
 * Date:
@@ -18,6 +18,7 @@ module Register
 	input reset,
 	input enable,
 	input  [N-1:0] DataInput,
+	input sp,
 	
 	
 	output reg [N-1:0] DataOutput
@@ -25,10 +26,13 @@ module Register
 
 always@(negedge reset or posedge clk) begin
 	if(reset==0)
-		DataOutput <= 0;
-	else	
-		if(enable==1)
-			DataOutput<=DataInput;
+        if(sp == 1)
+            DataOutput<= 32'h10_01_04_00;
+        else
+            DataOutput <= 0;
+    else
+        if(enable==1)
+            DataOutput<=DataInput;
 end
 
 endmodule
